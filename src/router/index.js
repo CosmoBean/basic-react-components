@@ -1,11 +1,12 @@
 import {createBrowserRouter} from 'react-router-dom';
 import AccordionPage from "../pages/AccordionPage";
 import ButtonPage from "../pages/ButtonPage";
+import App from '../App';
 
 export const router = createBrowserRouter([
     {
       path:"/",
-      element:<div>App</div>
+      element:<App />
     },
     {
       path:"/button",

@@ -1,5 +1,4 @@
 // the children prop will basically pass down the children text in wrapped within the custom Button Prop
-import propTypes from "prop-types";
 import className from "classnames";
 import { twMerge } from "tailwind-merge";
 
