@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-function Dropdown({options,selectedOption, handleOptionClick}) {
+// set the dropdown option as value and onchange for a more generic convention name for all components
+function Dropdown({options,value, onChange}) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleDropdownClick = () => {
@@ -8,7 +9,7 @@ function Dropdown({options,selectedOption, handleOptionClick}) {
   };
 
   const handleOptionSelect = (option) => {
-    handleOptionClick(option);
+    onChange(option);
     setIsOpen(false);
   }
 
@@ -18,7 +19,7 @@ function Dropdown({options,selectedOption, handleOptionClick}) {
 
   return (
     <div >
-    <div onClick={handleDropdownClick} className='cursor-default bg-slate-400 w-[180px] text-center'>{selectedOption? selectedOption.label: 'select an option'} </div>
+    <div onClick={handleDropdownClick} className='cursor-default bg-slate-400 w-[180px] text-center'>{value? value.label: 'select an option'} </div>
     <div>
     {isOpen && <div>{renderedOptions}</div>}
     </div>
